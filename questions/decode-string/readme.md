@@ -1,7 +1,5 @@
 ## problem
 
-[link]()
-
 text
 
 ## input

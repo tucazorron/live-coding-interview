@@ -1,16 +1,3 @@
-/*
-
-problem:
-after removing one element from the array, verify if it can be divided into two subarrays with the same total sum
-
-input:
-integer array
-
-ouput:
-boolean
-
-*/
-
 package main
 
 import "fmt"
@@ -32,7 +19,7 @@ func solution(nums []int) bool {
 	}
 	total_sum := sum(nums)
 	for idx, num := range nums {
-		if (total_sum - num) % 2 != 0 {
+		if (total_sum-num)%2 != 0 {
 			continue
 		}
 		copyArray := make([]int, size)
@@ -63,7 +50,7 @@ func solution2(nums []int) bool {
 
 	// create a hashset for already read elements
 	nums_read := make(map[int]struct{})
-	
+
 	// create our candidate value
 	candidate := sum(nums)
 
@@ -92,11 +79,11 @@ func solution2(nums []int) bool {
 
 func main() {
 	tests := [][]int{
-		{1, 2, 3, 3, 3, 20}, 	// true
-		{},                  	// false
-		{1},                 	// false
-		{1, 1},              	// false
-		{9, -8, 3, 6, -1, -10}, 	// true
+		{1, 2, 3, 3, 3, 20},    // true
+		{},                     // false
+		{1},                    // false
+		{1, 1},                 // false
+		{9, -8, 3, 6, -1, -10}, // true
 	}
 	for _, test := range tests {
 		result := solution2(test)
