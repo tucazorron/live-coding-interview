@@ -41,8 +41,12 @@ func solution(nums []int) bool {
 func solution2(nums []int) bool {
 
 	// cant split evenly array less than 3 elements
+	fmt.Println("a lista te menos de tres elementos?")
 	if len(nums) < 3 {
+		fmt.Println("sim")
 		return false
+	} else {
+		fmt.Println("nao")
 	}
 
 	// create a hashset for elements to find
@@ -53,12 +57,15 @@ func solution2(nums []int) bool {
 
 	// create our candidate value
 	candidate := sum(nums)
+	fmt.Println("soma total", candidate)
 
 	// loop all elements
 	for _, num := range nums {
 
 		// if you found a number we were looking for
+		fmt.Println("estavamos procurando valor", num, "?")
 		if _, exists := nums_to_find[num]; exists {
+			fmt.Println("sim")
 			return true
 		}
 
@@ -83,7 +90,7 @@ func main() {
 		{},                     // false
 		{1},                    // false
 		{1, 1},                 // false
-		{9, -8, 3, 6, -1, -10}, // true
+		{9, -8, 3, 6, -1, -10}, // true = -1 => -19 => -3 => -9 => -21 => -19 => 1
 	}
 	for _, test := range tests {
 		result := solution2(test)

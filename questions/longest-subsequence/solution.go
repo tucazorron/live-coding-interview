@@ -4,9 +4,9 @@ import (
 	"fmt"
 )
 
-func solution(s string, arr []string) []string {
+func solution(s string, words []string) []string {
 	maxsubs, maxlen := []string{}, 0
-	for _, word := range arr {
+	for _, word := range words {
 		si, wi := 0, 0
 		for si < len(s) && wi < len(word) {
 			if word[wi] == s[si] {
